@@ -1,14 +1,6 @@
 <script>
 	import { Button } from "$lib/components/ui/button";
-	import {
-		Area,
-		Axis,
-		Chart,
-		Highlight,
-		Svg,
-		Tooltip,
-		TooltipItem,
-	} from "layerchart";
+	import { Area, Axis, Chart, Highlight, Svg, Tooltip } from "layerchart";
 	import { scaleTime } from "d3-scale";
 
 	import appleStock from "./apple-stock.json";
@@ -40,9 +32,9 @@
 		</Svg>
 
 		<!-- header={(data) => formatDate(data.date, "eee, MMMM do")} -->
-		<Tooltip _variant="invert" let:data>
-			<TooltipItem label="value" value={data.value} />
-		</Tooltip>
+		<Tooltip.Root _variant="invert" let:data>
+			<Tooltip.Item label="value" value={data.value} />
+		</Tooltip.Root>
 	</Chart>
 </div>
 
